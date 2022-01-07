@@ -2,8 +2,7 @@ const Discord = require('discord.js');
 
 const randomanime = require("random-anime")
 
-module.exports = {
-  calistir: async(client, message, args) => {
+exports.run = async (client, message, args) => {
 
     const anime = randomanime.anime();
 
@@ -11,10 +10,22 @@ module.exports = {
 
     message.channel.send({embeds: [embed]});
 
-  },
-
-  name: "random-anime",
-  description: "",
-  aliases: [],
-  usage: "",
   }
+  
+exports.conf = {
+
+  enabled: true,
+
+  guildOnly: false,
+
+  aliases: [],
+
+  permLevel: 0
+
+};
+
+exports.help = {
+
+  name: 'random-anime'
+
+};
